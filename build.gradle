@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+version = '0.1'
+group = 'lt.mexahuk.samples'
+
+// sourceCompatibility = '1.7'
+// targetCompatibility = '1.7'
+
+repositories { mavenCentral() }
+
+configurations {
+    compile.exclude module: 'commons-logging'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
