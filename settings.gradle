@@ -1,2 +1,4 @@
 rootProject.name = 'samples'
 
+include 'gwt-with-restfull-api'
+

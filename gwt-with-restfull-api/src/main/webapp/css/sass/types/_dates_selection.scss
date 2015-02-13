@@ -1,0 +1,365 @@
+#dates_selection {
+	.info_panel {
+		background: url('../media/images/bg/info_panel_bg.png') center center no-repeat;
+		@include background-size(cover);
+		width: 100%; height: 150px;
+
+		.photo {
+			position: relative;
+			float: left;
+			width: 150px; height: 149px;
+			text-align: center;
+
+			img {
+				width: 110px; height: 110px;
+				@include border-radius(55px);
+				margin: 20px auto 0 auto;
+			}
+		}
+		.info_wrap {
+			float: left;
+
+			.name {
+				font: normal 21px/25px "Open sans", sans-serif;
+				color: #ffffff;
+				padding: 49px 0 12px 3px;
+			}
+			.item {
+				@include inline-block;
+				border-right: 1px solid #a7cde4;
+				font: normal 14px/20px 'Open sans', sans-serif;
+				color: #ffffff;
+				padding: 0 18px;
+
+				&.gender {
+					background: url('../media/images/dec/male_dec_white.png') 0 50%% no-repeat;
+					padding: 0 18px 0 25px;
+				}
+				&.mail {
+					border-right: none;
+					color: rgba(255,255,255,0.5);
+				}
+			}
+		}
+		.doctor_info {
+			float: left;
+			border-left: 1px solid #829caa;
+			min-width: 250px; height: 112px;
+			margin: 20px 0 0 214px;
+			padding: 7px 0 0 27px;
+
+			.title {
+				font: normal 13px/13px 'Open sans', sans-serif;
+				color: #323f4b;
+				text-transform: uppercase;
+				padding: 0 0 25px 0;
+			}
+			.doctor_photo {
+				float: left;
+				margin-right: 21px;
+				width: 50px;
+			}
+			.name {
+				font: bold 18px/18px 'Open sans', sans-serif;
+				color: #fff; 
+			}
+			.contact_btn {
+				background: url('../media/images/dec/white_plus_dec.png') 0 0 no-repeat;
+				padding-left: 29px;
+				font: normal 14px/20px 'Open sans', sans-serif;
+				color: #bee6ff;
+				margin: 7px 0 0 70px;
+				cursor: pointer;
+			}
+		}
+	}
+	.table_holder {
+		background-color: #ffffff;
+
+		.builder_main_table {
+			border: none;
+			margin: 0;
+
+			tr.line_first td:first-child {
+				display: none;
+			}
+		}
+	}
+	.dates_holder {
+		padding: 40px 21px;
+		border-top: 1px solid #d2d6d9;
+
+		.general_info {
+			.txt {
+				font: normal 14px/16px 'Open sans', sans-serif;
+				color: rgba(68,87,103,0.5);
+				padding: 0 0 9px 0;
+			}
+			.date {
+				background: url('../media/images/ico/date_picker_ico.png') 93% 50% no-repeat;
+				font: bold 16px/16px 'Open sans', sans-serif;
+				color: #323f4b;
+				padding: 0 20px 0 0;
+			}
+		}
+		.dates_block_nav {
+
+			.item {
+				color: #42adf1;
+				font: normal 14px/30px 'Open Sans', sans-serif;
+				padding: 0 20px 0 19px;
+				@include inline-block;
+				margin: 0 10px;
+				border: 1px solid transparent;
+				height: 30px;
+				cursor: pointer;
+
+				&.active, &:hover {
+					color: #445767;
+					border: 1px solid #435767;
+					@include border-radius(16px);
+					@include background-clip(padding-box);
+
+				}
+			}
+		}
+		.dates_stage {
+			max-width: 1160px;
+			background-color: #ffffff;
+			border: 1px solid #d2d6d9;
+			@include border-radius(4px);
+			margin: 27px auto 0 auto;
+
+			.header {
+				height: 70px;
+				background-color: #f5f5f5;
+				border-bottom: 1px solid #d2d6d9;
+				padding: 0 40px;
+				
+				.number {
+					font: bold 30px/70px 'Open sans', sans-serif;
+					color: #445767;
+				}
+				.title {
+					font: normal 30px/70px 'Open sans', sans-serif;
+					color: #445767;
+					font-weight: 300;
+				}
+				.date {
+					font: bold 24px/70px 'Open sans', sans-serif;
+					color: #445767;
+				}
+			}
+			.cont {
+				
+				.calendar {
+					.gwt-DatePicker {
+						border: none;
+						margin: 19px 0 0 33px;
+
+						.datePickerDay {
+							width: 40px; height: 40px;
+						}
+					}
+				}
+				.product_list {
+					width: 73%;
+					float: left;
+					background-color: #ffffff;
+					padding: 20px 20px 60px 50px;
+					@include box-sizing(border-box);
+
+					.list_item {
+						font-size: 0;
+						padding: 18px 0 13px 0;
+						border-bottom: 1px solid #dadde1;
+
+						div {
+							@include inline-block;
+							font: normal 14px/14px 'Open Sans', sans-serif;
+							color: #666666;
+
+							&.number {
+								width: 54px;
+								text-align: center;
+							}
+							&.name {
+								width: 42%;
+							}
+							&.time {
+								width: 21%;
+								padding: 0 0 0 94px;
+							}
+							&.quantity { 
+								text-align: center;
+								width: 69px;
+							}
+							&.extra_time {
+								width: 13%;
+								text-align: center;
+
+								.yes_no_btn {
+									background: url('../media/images/btn/yes_no_btn.png') 0 0 no-repeat;
+									width: 50px; height: 20px;
+									margin: 0 auto;
+									cursor: pointer;
+								}
+								&.no {
+									.yes_no_btn {
+										background: url('../media/images/btn/yes_no_btn.png') 0 100% no-repeat;
+									}
+								}
+							}
+						}
+						&.last {
+							border-bottom: none;
+							div.time {
+								font-size: 18px;
+								strong { font-size: 18px; }
+							}
+						}
+						&.header {
+							background: none;
+							height: auto;
+							padding: 18px 0 13px 0;
+
+							div {
+								color: #a1aab2;
+							}
+						}
+					}
+				}
+				
+			}
+		}
+		.combine_block {
+			width: 540px; height: 70px;
+			border: 1px solid rgba(76,79,82,.21);
+			@include border-radius(5px);
+			@include background-clip(padding-box);
+			background-color: #fff;
+			margin: 19px auto 0 auto;
+			font: normal 24px/70px 'Open sans', san-serif;
+			font-weight: 300;
+			color: #445767;
+			padding: 0 13px 0 20px;
+			@include box-sizing(border-box);
+
+			.combine_btn {
+				background: #ef6949 url('../media/images/dec/combine_dec.png') 18px 50% no-repeat;
+				width: 220px; height: 39px;
+				@include border-radius(2px);
+				@include background-clip(padding-box);
+				border-bottom: 1px solid #c6573d;
+				font: normal 16px/41px 'Open sans', sans-serif;
+				color: #fff;
+				padding: 0 0 0 54px;
+				@include box-sizing(border-box);
+				margin-top: 13px;
+				cursor: pointer;
+			}
+		}
+		.confirm_btn_holder {
+			max-width: 1160px;
+			margin: 0 auto;
+
+			.confirm_btn {
+				background: #41adf1 url("../media/images/dec/save_settings_dec.png") 90% 50% no-repeat;
+				width: 188px; height: 50px;
+				border: none;
+				@include border-radius(2px);
+				@include background-clip(padding-box);
+				font: bold 18px/50px 'Open Sans', sans-serif;
+				color: #ffffff;
+				margin: 40px 0 0 0;
+				padding-left: 22px;
+			}
+		}
+
+		&.combined {
+			
+			.cont {
+				@include border-radius(0 0 2px 2px);
+			}
+			.combine_block {
+				width: auto;
+				max-width: 1160px;
+				margin-top: 0px;
+				border-top: 0;
+				@include border-radius(0 0 2px 2px);
+				text-align: center;
+
+				.combine_btn {
+					float: none;
+					@include inline-block;
+					background: #ef6949 url('../media/images/dec/split_dec.png') 10px 50% no-repeat;
+					margin: -6px 0 0 125px;
+					width: 190px;
+					padding: 0 0 0 28px;
+				}
+			}
+			.confirm_btn {
+				margin: 21px 0 0 0;
+			}
+		}
+		&.manual {
+			
+			.dates_stage .cont {
+				.product_list {
+					width: 100%;
+					float: none;
+					
+					.list_item {
+						
+						.name {
+							width: 28%;
+						}
+						.date {
+							width: 21%;
+							background: url('../media/images/ico/date_picker_ico.png') 93% 50% no-repeat;
+							font: bold 14px/16px 'Open sans', sans-serif;
+							color: #323f4b;
+							padding: 0 20px 0 0;
+							max-width: 143px;
+						}
+						.extra_time {
+							width: 11%;
+							padding-left: 110px;
+						}
+
+						&.header {
+							.date {
+								background: none;
+								color: #a1aab2;
+								padding: 0;
+								font-weight: normal;
+							}
+						}
+					}
+				}
+			}
+			.combine_block { 
+				position: relative;
+
+				.info_date {
+					position: absolute;
+					top:27px; right: -188px;
+					background: url('../media/images/ico/date_picker_ico.png') 93% 50% no-repeat;
+					font: bold 14px/16px 'Open sans', sans-serif;
+					color: #323f4b;
+					padding: 0 43px 0 0;
+
+					&.attention{
+						color: #f6ae00;
+						right: -228px;
+
+						img { margin-right: 8px; }
+					}
+				}
+			}
+			.confirm_btn {
+				margin: 21px 0 0 0;
+			}
+		}
+	}
+}

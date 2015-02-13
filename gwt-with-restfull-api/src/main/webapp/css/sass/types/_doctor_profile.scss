@@ -1,0 +1,83 @@
+.doctor_profile {
+	
+	#doctor_profile {
+		text-align: center;
+
+		.photo {
+
+			img {
+				display: block;
+				margin: 30px auto 33px auto;
+				max-width: 181px; max-height: 181px;
+			}
+		}
+		.name {
+			font: bold 13px/14px Arial;
+			color: #51585e;
+		}
+		.job {
+			font: bold 11px/14px Arial;
+			color: #51585e;
+			padding-top: 26px;
+		}
+		.email {
+			font: normal 12px/15px Arial;
+			color: #64b7ff;
+		}
+		.phone {
+			font: normal 12px/15px Arial;
+			color: #adadad;
+		}
+		.other_contact_persons {
+			border: 1px solid #dddddd;
+			height: 113px; width: 157px;
+			margin: 51px auto 0 auto;
+
+			.title {
+				font: normal 12px/12px Arial;
+				color: #7ba9c2;
+				text-transform: uppercase;
+				margin: -5px 0 22px 0;
+				background-color: #ffffff;
+				@include inline-block;
+				width: 117px;
+			}
+		}
+	}
+	.archive {
+		background: none;
+
+		.archive_filter_form {
+			background-color: #ffffff;
+			margin: 15px;
+
+			h3 {
+				font: bold 10px/10px Arial;
+				color: #7ba9c2;
+				text-transform: uppercase;
+				padding: 16px 15px;
+				border: 1px solid #efefef;
+				border-bottom: 0;
+			}
+			table td {
+
+				&:nth-child(1) {
+					width: 7px;
+				}
+				&:nth-child(2) {
+					width: 98px;
+				}
+				&:nth-child(3) {
+					width: 150px;
+				}
+				&:nth-child(4) {
+					width: 148px;
+				}
+				&:nth-child(5) {
+					width: auto;
+				}
+			}
+		}
+	}
+	
+}

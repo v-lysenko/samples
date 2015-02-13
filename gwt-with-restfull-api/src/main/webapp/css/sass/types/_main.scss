@@ -1,0 +1,97 @@
+.left_side_block {
+	background-color: #ffffff;
+	width: 299px;
+	border-right: 1px solid #edeeef;
+	@include inline-block(top);
+	
+	.top_date {
+		font: bold 18px/18px 'Open Sans', sans-serif;;
+		color: #445767;
+		float: left;
+		padding: 19px 0 0 20px;
+	}
+	.top_time {
+		font: normal 18px/18px 'Open Sans', sans-serif;
+		font-weight: 300;
+		color: #445767;
+		float: right;
+		padding: 20px 18px 0 0;
+
+		.value {
+			font: normal 14px/18px 'Open Sans', sans-serif;
+			font-weight: 300;
+			color: #445767;
+		}
+	}
+	.data_statistics {
+		margin-top: 25px;
+		border-bottom: 1px solid #f3f4f5;
+		padding-bottom: 15px;
+
+		div.data_link {
+			width: 260px;
+			display: block;
+			margin: 0 0 6px 21px;
+
+			span {
+				background-color: #ffffff;
+				padding: 0 3px 0 0;
+				font: normal 14px/14px 'Open Sans', sans-serif;
+				color: rgba(68,87,103,0.5);
+
+				&.number {
+					padding: 3px 0 0 3px;
+					float: right;
+				}
+			}
+			&:hover {
+				text-decoration: none;
+			}
+			&.important span {
+				color: #f06a4a;
+			}
+		}
+		.title {
+			width: 185px;
+			display: block;
+			margin: 0 0 15px 21px;
+			color: #445767;
+			font: bold 14px/14px 'Open Sans', sans-serif;
+		}
+	}
+	#advertisement {
+		margin: 47px auto 0 auto;
+		display: block;
+	}
+}
+.right_side_block {
+	width: 80%;
+	padding-bottom: 54px;
+	@include inline-block(top);
+
+	a {
+		font: bold 10px/10px Arial;
+		color: #adc8d7;
+		text-transform: uppercase;
+		@include inline-block;
+		padding-left: 13px;
+	}
+	.patients_list {
+		width: 253px;
+		padding: 10px 0 0 17px;
+		@include inline-block(top);
+		@include box-sizing(border-box);
+
+		.card {
+			margin: 10px 0 0 0;
+		}
+	}
+	.mail_block {
+		@include inline-block(top);
+		width: 100%;
+
+		.inbox {
+			margin-top: -1px;
+		}
+	}
+}

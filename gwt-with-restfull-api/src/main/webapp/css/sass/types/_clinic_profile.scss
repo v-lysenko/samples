@@ -1,0 +1,104 @@
+.clinic_profile {
+	
+	#clinic_profile {
+		text-align: center;
+
+		.photo {
+
+			img {
+				display: block;
+				margin: 30px auto 33px auto;
+				max-width: 181px; max-height: 181px;
+			}
+		}
+		.name {
+			font: bold 13px/14px Arial;
+			color: #51585e;
+		}
+		.job {
+			font: bold 11px/14px Arial;
+			color: #51585e;
+			padding-top: 26px;
+		}
+		.email {
+			font: normal 12px/15px Arial;
+			color: #64b7ff;
+			padding-bottom: 10px;
+		}
+		.phone {
+			font: normal 12px/15px Arial;
+			color: #adadad;
+		}
+		.other_contact_persons {
+			height: 113px; width: 230px;
+			margin: 37px auto 0 auto;
+
+			.title {
+				font: bold 10px/12px Arial;
+				color: #7ba9c2;
+				text-transform: uppercase;
+				margin: 0px 0 15px 0;
+				background-color: #ffffff;
+				@include inline-block;
+				width: 117px;
+			}
+			.email {
+				padding-bottom: 0;
+			}
+		}
+	}
+	.doctors {
+		padding: 30px 25px;
+
+		.title {
+			font: bold 10px/10px Arial;
+			color: #7ba9c2;
+			text-transform: uppercase;
+			padding-bottom: 15px;
+		}
+		.doctor_card {
+			width: 341px; height: 212px;
+			overflow: hidden;
+			background-color: #ffffff;
+			@include box-shadow(#ececec 1px 1px 0px);
+			margin: 0 30px 30px 0;
+
+			img {
+				display: block;
+				margin: 29px 25px 0 24px;
+			}
+			.info {
+				padding: 20px 0 0 0;
+
+				.name {
+					font: bold 13px/14px Arial;
+					color: #51585e;
+				}
+				.email {
+					font: normal 12px/15px Arial;
+					color: #64b7ff;
+				}
+				.phone {
+					font: normal 12px/15px Arial;
+					color: #adadad;
+				}
+				a {
+					font: normal 11px/15px Arial;
+					color: #64b7ff;
+					text-decoration: underline;
+					padding: 8px 0 0 0;
+					text-transform: none;
+				}
+			}
+			.aide_contact {
+
+				.title {
+					font: bold 10px/12px Arial;
+					color: #7ba9c2;
+					text-transform: uppercase;
+					padding: 31px 0 9px 0;
+				}
+			}
+		}
+	}
+}

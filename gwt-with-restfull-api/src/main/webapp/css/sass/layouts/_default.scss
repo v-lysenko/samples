@@ -1,0 +1,237 @@
+$global-font-size: 12px;
+$global-line-height: 100%;
+$global-font-family: Arial, Tahoma, Verdana, sans-serif;
+$global-color: #222;
+
+* { margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+}
+body {
+	background-color: #f1f0ec;
+	height: 100%;
+	position: relative;
+}
+input, textarea, option, select, body, td, th, div, span, p {
+	font: normal normal #{$global-font-size}/#{$global-line-height} $global-font-family;
+	color: $global-color;
+}
+a {
+	&:link,
+	&:active,
+	&:visited {
+		text-decoration: none;
+		font: normal normal #{$global-font-size}/#{$global-line-height} $global-font-family;
+		color: $global-color;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.preload {
+	display: none;
+}
+.wrapper {
+	margin: 0 auto;
+	max-width: 1120px;
+	position: relative;
+	@include box-sizing(border-box);
+}
+.content {
+	background-color: #ffffff;
+	min-width: 100%;
+	min-height: 100%;
+	height: auto;
+	position: relative;
+	@include box-sizing(border-box);
+	
+	#right_content {
+		background-color: #f6f6f6;
+		width: 100%;
+		overflow: auto;
+		padding: 0 0 42px 80px;
+		@include box-sizing(border-box);
+		position: relative;
+		z-index: 1;
+	}
+}
+.txt, .txt * {
+	font-family: 'Helvetica_Neue_Regular';
+	font-size: 12px;
+	line-height: 12px;
+	color: #292929;
+}
+img {
+	@include inline-block;
+}
+
+/* headings */
+h1 {
+	margin: 0;
+	font-family: Arial;
+	font-size: 24px;
+	line-height: 24px;
+	color: #51585e;
+}
+h2 {
+	font-family: 'Helvetica_Neue_Bold';
+	font-size: 28px;
+	line-height: 28px;
+	color: #848484;
+}
+h3 {
+	color: #b49a6b;
+	font: normal 12px/18px 'Helvetica_Neue_Bold';
+}
+/* headings */
+
+/* form elements */
+input {
+	border: none;
+	background: none;
+}
+input[type="text"] {
+	@include box-sizing(border-box);
+	padding: 0 5px;
+	color: #afafaf;
+	font: normal 16px/16px 'Open Sans', sans-serif;
+	border: none; background: none;
+}
+input[type="checkbox"] {
+	@include inline-block;
+}
+label {
+	@include inline-block;
+}
+.previous_btn {
+	position: absolute;
+	top: 0;	left: 0;
+}
+.next_btn {
+	position: absolute;
+	top: 0; right: 0;
+}
+/* form elements */
+
+
+/*imported datepicker style */
+.gwt-DatePicker {
+	cursor: default;
+	margin: 16px 0 0 13px;
+	border-top: 1px solid #edeeef;
+	background: #ffffff;
+}
+table.datePickerDays {
+	margin-top: 19px;
+}
+.gwt-DatePicker td,
+.datePickerMonthSelector td:focus {
+	outline: none;
+}
+.datePickerMonthSelector td:focus {
+	outline: none;
+}
+.datePickerDays {
+	width: 100%;
+	background: white;
+}
+.datePickerDay,
+.datePickerWeekdayLabel,
+.datePickerWeekendLabel {
+	text-align: center;
+	width: 39px; height: 32px;
+	outline: none;
+	font: normal 14px/14px 'Open Sans', sans-serif;
+	color: #445767;
+}
+.datePickerWeekdayLabel,
+.datePickerWeekendLabel {
+	color: rgba(68,87,103,0.5);
+	font: bold 12px/12px 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	height: 26px;
+}
+.datePickerDay {
+	cursor: pointer;
+	display: table-cell;
+	vertical-align: middle;
+	border: none;
+}
+.datePickerDayIsHighlighted {
+	background: none;
+}
+.datePickerDayIsWeekend {
+	background: #ffffff;
+}
+.datePickerDay.dateOccupied {
+	color: #42adf1;
+	font-weight: bold;
+}
+.datePickerDayIsFiller {
+	color: rgba(68,87,103,0.4);
+	font: normal 14px/14px 'Open Sans', sans-serif;
+}
+.datePickerDayIsDisabled {
+	color: #AAAAAA;
+	font-style: italic;
+}
+.datePickerDayIsToday {
+	background: url( '../media/images/bg/datepicker_today_bg.png' ) 3px 1px no-repeat;
+	color: #fff;
+}
+.datePickerDay.selected {
+	background-color: #42adf1;
+	color: #ffffff;
+}
+.datePickerDay.selected.first {
+	@include border-left-radius(22px);
+}
+.datePickerDay.selected.last {
+	@include border-right-radius(22px);
+}
+.datePickerMonthSelector {
+	width: 100%;
+	padding: 1px 0 5px 0;
+	background: #fff;
+	margin: 10px 0;
+	border-top: 1px solid #edeeef;
+}
+.datePickerPreviousButton,
+.datePickerNextButton,
+.datePickerPreviousYearButton,
+.datePickerNextYearButton {
+	font-size: 120%;
+	line-height: 1em;
+	color: #3a6aad;
+	cursor: hand;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 0px 4px;
+	outline: none;
+}
+td.datePickerMonth,
+td.datePickerYear {
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	font-size: 100%;
+	font-weight: bold;
+	color: #333;
+}
+.datePickerMonth {
+	font: normal 14px/14px 'Open sans', sans-serif;
+	color: #445767;
+}
+.datePickerPreviousButton .html-face,
+.datePickerNextButton .html-face {
+	font: normal 16px/16px 'Open sans', sans-serif;
+	color: #445767;
+}
+.gwt-DateBox {
+	padding: 5px 4px;
+	font-size: 100%;
+}
+.gwt-DateBox input {
+	width: 8em;
+}

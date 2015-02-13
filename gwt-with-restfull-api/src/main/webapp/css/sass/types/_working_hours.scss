@@ -1,0 +1,222 @@
+#working_hours {
+	padding-bottom: 50px;
+	margin: 18px 19px;
+	background-color: #ffffff;
+	border: 1px solid #d2d3d3;
+	@include border-radius(2px);
+	
+	.working_hours_info {
+		padding: 53px 39px;
+	}
+	h3 {
+		font: normal 16px/16px 'Open Sans', sans-serif;
+		color: #333333;
+		text-transform: uppercase;
+		padding-bottom: 15px;
+	}
+	.choose_block {
+		float: left;
+		width: 360px; height: 137px;
+		margin: 21px 20px 36px 0;
+		padding: 10px 0 15px 0;
+
+		.title {
+			font: normal 36px/36px 'Open Sans', sans-serif;
+			font-weight: 300;
+			color: #333333;
+			padding-bottom: 12px;
+		}
+		strong {
+			font: bold 16px/16px 'Open Sans', sans-serif;
+			color: #333333;
+		}
+		.txt {
+			font: normal 13px/18px 'Open Sans', sans-serif;
+			color: #333333;
+			width: 300px;
+			padding-top: 15px;
+		}
+	}
+	.date_block {
+		width: 190px; height: 78px;
+		background-color: #42adf1;
+		@include border-radius(2px);
+		border: 1px solid transparent;
+		float: left;
+		margin: 11px 11px 0 0;
+		position: relative;
+
+		.week_day {
+			background: url('../media/images/dec/white_small_tick.png') 91% 20px no-repeat;
+			font: bold 18px/18px 'Open Sans', sans-serif;
+			color: #ffffff;
+			padding: 16px 0 0 19px;
+		}
+		.hours {
+			background: url('../media/images/dec/working_hours_clock_dec.png') 20px 11px no-repeat;
+			padding: 13px 0 0 48px;
+			font: normal 16px/18px 'Open Sans', sans-serif;
+			color: #ffffff;
+		}
+
+		&.day_off {
+			border: 1px solid #d9dada;
+			background-color: #ffffff;
+
+			.week_day {
+				color: #42adf1;
+			}
+			.hours {
+				color: #adadad;
+				padding-left: 19px;
+			}
+		}
+		.date_select_popup {
+			position: absolute;
+			top: -104px; left: -24px;
+			z-index: 99;
+			width: 331px; height: 274px;
+			padding: 21px 0 0 0px;
+			@include border-radius(2px);
+			@include background-clip(padding-box);
+			background-color: #fff;
+			@include box-shadow(0 1px 3px rgba(0,0,0,.3));
+
+			.working_day_on {
+				position: absolute;
+				top: 14px; right: 19px;
+				color: rgba(68,87,103,0.4);
+				font: normal 12px/12px 'Open Sans', sans-serif;
+
+				img { margin-left: 6px; }
+			}
+			.hour_block {
+				padding: 0 0 29px 11px;
+
+				&.second {
+					padding: 0 0 14px 11px;
+				}
+				span {
+					@include inline-block;
+					font: bold 12px/12px 'Open Sans', sans-serif;
+					color: #333333;
+				}
+				input[type="text"] {
+					width: 48px; height: 33px;
+					border: 1px solid #dadde1;
+					@include border-radius(2px);
+					color: #333333;
+					font-size: 12px;
+					margin: 0 9px;
+				}
+				.line {
+					padding: 0 13px;
+				}
+			}
+			.title {
+				font: normal 14px/14px 'Open Sans', sans-serif;
+				font-weight: 600;
+				color: #333333;
+				padding: 0 0 24px 20px;
+			}
+			.add_break {
+				font: normal 12px/12px 'Open Sans', sans-serif;
+				color: #42adf1;
+				padding-left: 20px;
+				cursor: pointer;
+			}
+			.buttons_block {
+				background-color: #f6f6f6;
+				border-top: 1px solid #e4e6e7;
+				margin-top: 17px;
+				padding: 10px 0 9px 0;
+
+				.cancel {
+					color: rgba(68,87,103,0.4);
+					font: normal 16px/40px 'Open Sans', sans-serif;
+					width: 140px;
+					height: 40px;
+					margin-left: 10px;
+					padding-left: 12px;
+					cursor: pointer;
+
+					span {
+						@include inline-block(top);
+						color: rgba(68,87,103,0.4);
+						font: bold 16px/38px 'Open Sans', sans-serif;
+						padding-right: 10px;
+					}
+				}
+				.save {
+					width: 140px;
+					height: 39px;
+					margin-right: 10px;
+					border-bottom: 1px solid #368ec6;
+					@include border-radius(2px);
+					@include background-clip(padding-box);
+					background-color: #41adf1;
+					font: normal 16px/40px 'Open Sans', sans-serif;
+					color: #ffffff;
+					text-align: center;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	input[type="submit"] {
+		background: url('../media/images/dec/save_settings_dec.png') 90% 50% no-repeat;
+		width: 210px;
+		height: 50px;
+		border: none;
+		@include border-radius(2px);
+		@include background-clip(padding-box);
+		background-color: #41adf1;
+		font: bold 18px/50px 'Open Sans', sans-serif;
+		color: #ffffff;
+		text-align: center;
+		margin: 0 31px 0 20px;
+	}
+	.reset_btn {
+		width: 118px;
+		height: 48px;
+		border: 1px solid #d1d5d9;
+		@include border-radius(2px);
+		@include background-clip(padding-box);
+		font: bold 18px/48px 'Open Sans', sans-serif;
+		color: rgba(68,87,103,0.5);
+		text-align: center;
+		cursor: pointer;
+	}
+	.calendar_list {
+		padding: 69px 39px 0 39px;
+		margin-bottom: 29px;
+		border-bottom: 1px solid #f0f1f2;
+
+		.txt {
+			font-size: 14px;
+			line-height: 14px;
+			padding-bottom: 60px;
+		}
+
+		.calendar {
+			padding: 0 70px 77px 27px;
+
+			.month {
+				font: bold 14px/14px 'Open Sans', sans-serif;
+				color: #445767;
+				text-transform: uppercase;
+				float: left;
+				padding: 0 0 18px 7px;
+			}
+			.year {
+				font: normal 14px/14px 'Open Sans', sans-serif;
+				color: #445767;
+				float: right;
+				padding: 0 7px 18px 0;
+			}
+			.gwt-DatePicker {
+				margin: 0;
+			}
+		}
+	}
+}

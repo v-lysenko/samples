@@ -1,0 +1,36 @@
+/*------------------------------------------------------------------
+[Fonts]
+-------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'Helvetica_Neue_Regular';
+    src: url('../media/fonts/helvetica_neue_ce_55_roman.eot');
+    src: url('../media/fonts/helvetica_neue_ce_55_roman.eot?#iefix') format('embedded-opentype'),
+         url('../media/fonts/helvetica_neue_ce_55_roman.woff') format('woff'),
+         url('../media/fonts/helvetica_neue_ce_55_roman.ttf') format('truetHelvetica_Neue_Regularype'),
+         url('../media/fonts/helvetica_neue_ce_55_roman.svg#helvetica_ce_55_romanregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica_Neue_Bold';
+    src: url('../media/fonts/helvetica_neue_ce_75_bold.eot');
+    src: url('../media/fonts/helvetica_neue_ce_75_bold.eot?#iefix') format('embedded-opentype'),
+         url('../media/fonts/helvetica_neue_ce_75_bold.woff') format('woff'),
+         url('../media/fonts/helvetica_neue_ce_75_bold.ttf') format('truetype'),
+         url('../media/fonts/helvetica_neue_ce_75_bold.svg#helvetica_ce_55_romanbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BouquetRegular';
+    src: url('../media/fonts/bouquet_regular.eot');
+    src: url('../media/fonts/bouquet_regular.eot?#iefix') format('embedded-opentype'),
+         url('../media/fonts/bouquet_regular.woff') format('woff'),
+         url('../media/fonts/bouquet_regular.ttf') format('truetype'),
+         url('../media/fonts/bouquet_regular.svg#bouquetregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

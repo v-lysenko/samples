@@ -1,0 +1,52 @@
+@import 'compass';
+
+/*------------------------------------------------------------------
+[ Core includes ]
+-------------------------------------------------------------------*/
+@import 'core/_core';
+@import 'core/_mixins';
+@import 'core/_normalize';
+@import 'core/_fonts';
+@import 'core/_variables';
+@import 'core/_print';
+
+/*------------------------------------------------------------------
+[ ICONS include ]
+-------------------------------------------------------------------*/
+// @import 'ico/icons/*.png';
+
+/*------------------------------------------------------------------
+[ Third part styles ]
+-------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------
+[ Layouts styles ]
+-------------------------------------------------------------------*/
+@import 'layouts/_default';
+@import 'layouts/_mobile';
+
+/*------------------------------------------------------------------
+[ Blocks styles ]
+-------------------------------------------------------------------*/
+@import 'blocks/_left_navigation';
+@import 'blocks/_header';
+@import 'blocks/_footer';
+
+/*------------------------------------------------------------------
+[ Types styles ]
+-------------------------------------------------------------------*/
+@import 'types/_week_calendar';
+@import 'types/_month_calendar';
+@import 'types/_inbox';
+@import 'types/_archive';
+@import 'types/_doctor_profile';
+@import 'types/_clinic_profile';
+@import 'types/_settings';
+@import 'types/_working_hours';
+@import 'types/_settings_products';
+@import 'types/_search_results_page';
+@import 'types/_main';
+@import 'types/_builder';
+@import 'types/_timeline';
+@import 'types/_dates_selection';

@@ -1,0 +1,123 @@
+
+
+apply plugin: 'war'
+apply plugin: 'gwt'
+apply plugin: 'idea'
+apply plugin: "groovy"
+
+apply plugin: 'jetty'
+apply plugin: 'com.bmuschko.tomcat'
+
+//apply plugin: 'eclipse'
+
+version = '0.1'
+group = 'lt.mexahuk.samples.gwt'
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+
+buildscript {
+    repositories {
+        jcenter()
+        // Alternatively use:
+        maven {
+            url 'http://dl.bintray.com/steffenschaefer/maven'
+        }
+    }
+    dependencies {
+        classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.0'
+    }
+}
+
+repositories { mavenCentral() }
+
+configurations {
+    compile.exclude module: 'commons-logging'
+}
+
+dependencies {
+
+    providedCompile group: 'com.google.gwt', name: 'gwt-user', version: '2.7.0'
+    providedCompile group: 'org.fusesource.restygwt', name: 'restygwt', version: '1.4'
+    providedCompile group: 'com.google.gwt', name: 'gwt-servlet', version: '2.7.0'
+
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0'
+    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet-core', version: '2.7'
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.7'
+    compile group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.3.2'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.1.2'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.2'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.10'
+    compile group: 'org.springframework', name: 'spring-context', version: '4.1.4.RELEASE'
+    compile group: 'org.springframework', name: 'spring-tx', version: '4.1.4.RELEASE'
+    compile group: 'org.springframework', name: 'spring-orm', version: '4.1.4.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version: '4.1.4.RELEASE'
+    // required by springframework as it still depends on JCL
+    runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.10'
+    compile(group: 'org.glassfish.jersey.ext', name: 'jersey-spring3', version: '2.7') {
+        exclude group: 'org.springframework'
+        exclude group: 'junit'
+    }
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '4.3.8.Final'
+    compile group: 'org.apache.commons', name: 'commons-pool2', version: '2.3'
+    compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.0.1'
+    compile group: 'com.google.guava', name: 'guava', version: '18.0'
+
+    testCompile 'org.codehaus.groovy:groovy-all:2.3.9',
+            'org.spockframework:spock-core:0.7-groovy-2.0',
+            'cglib:cglib-nodep:3.1'          // allows mocking of classes (in addition to interfaces)'
+
+    runtime group: 'org.codehaus.groovy', name: 'groovy', version: '2.3.9'
+
+    runtime group: 'mysql', name: 'mysql-connector-java', version: '5.1.34'
+    runtime group: 'com.h2database', name: 'h2', version: '1.4.185'
+}
+
+gwt {
+    gwtVersion = '2.7.0'
+
+    modules 'lt.mexahuk.samples.cards.ClientCard'
+
+    compiler {
+        strict = false;
+        enableClosureCompiler = true;
+        disableClassMetadata = true;
+        disableCastChecking = true;
+    }
+}
+
+task extendAppProperties {
+    dependsOn processResources
+    doLast {
+        def props = new Properties()
+        def propsFile = file("build/resources/main/app.properties")
+        props.load(propsFile.newDataInputStream())
+        def newProps = new Properties()
+        newProps.load(file("ext.properties").newDataInputStream())
+        newProps.propertyNames().each {
+            props.setProperty(it, newProps.getProperty(it))
+        }
+        props.store(propsFile.newWriter(), null)
+    }
+}
+
+task buildWar {
+    dependsOn test, extendAppProperties, war
+    extendAppProperties.mustRunAfter test
+    war.mustRunAfter extendAppProperties
+}
+
+tomcat {
+    httpPort = 8080
+
+    dependencies {
+        def tomcatVersion = '7.0.11'
+        tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+                "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+        tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
+            exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+        }
+        tomcat 'javax.servlet:servlet-api:2.5'
+        tomcat 'javax.servlet:javax.servlet-api:3.1.0'
+    }
+}

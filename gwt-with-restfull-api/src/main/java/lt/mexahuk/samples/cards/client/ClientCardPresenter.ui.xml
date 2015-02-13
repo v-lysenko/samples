@@ -1,0 +1,36 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+    <g:HTMLPanel styleName="card" ui:field="cardElement">
+        <div class="info">
+            <g:Image ui:field="settingsIcon" url="media/images/ico/settings_ico.png" styleName="settings_icon"/>
+
+            <g:HTML styleName="number" ui:field="orderNumber">#LV140705</g:HTML>
+            <div class="person_name">Vardenis Pavardenis</div>
+            <div class="photo">
+                <img src="media/images/pic/person1.png" alt=""/>
+            </div>
+            <div class="teeth_card">
+                <img src="media/images/pic/teeth_card.png" alt=""/>
+            </div>
+        </div>
+        <g:HTMLPanel styleName="layer" ui:field="layerElement">
+            <g:Image ui:field="cancelIcon" url="media/images/ico/cancel_ico.png" styleName="cancel_icon"/>
+
+            <div class="layer_info">
+                <img class="complete_job_icon" src="media/images/ico/done.png" alt=""/>
+
+                <div class="complete_job">Complete this job</div>
+                <img class="completed_icon" src="media/images/ico/completed.png" alt=""/>
+
+                <div class="completed">Completed</div>
+                <img class="outOfLab_icon" src="media/images/ico/outOfLab.png" alt=""/>
+
+                <div class="outOfLab_job">Out of lab</div>
+            </div>
+            <g:HTMLPanel styleName="delivered_from_lab_btn" ui:field="deliveredFromLabControl">Delivered from lab
+            </g:HTMLPanel>
+        </g:HTMLPanel>
+    </g:HTMLPanel>
+</ui:UiBinder> 
